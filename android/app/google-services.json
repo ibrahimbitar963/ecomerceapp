@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "515845568961",
+    "project_id": "my-flash-chat-d1a2a",
+    "storage_bucket": "my-flash-chat-d1a2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515845568961:android:18f5282b24b246ce0dd740",
+        "android_client_info": {
+          "package_name": "ibrahim.myflashchat.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515845568961-ea3e1k0offu57vcj4kefqqkinh17o12h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKPEUpaBv1I3Gpek-WriMObkxSOEavBpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515845568961-ea3e1k0offu57vcj4kefqqkinh17o12h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515845568961:android:62c00465879c7c910dd740",
+        "android_client_info": {
+          "package_name": "me.e_commerce.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515845568961-ea3e1k0offu57vcj4kefqqkinh17o12h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKPEUpaBv1I3Gpek-WriMObkxSOEavBpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515845568961-ea3e1k0offu57vcj4kefqqkinh17o12h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
