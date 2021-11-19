@@ -1,15 +1,22 @@
+import 'package:e_commerce_app/view/widgets/home_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 class AuthViewModel extends GetxController{
 
-  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+
   FirebaseAuth  _auth = FirebaseAuth.instance;
+  String email ;
+  String name ;
+  String password;
+  Rx<User> _user = Rx<User>();
+  get user => _user.value?.email;
 
   @override
   void onInit() {
     // TODO: implement onInit
     super.onInit();
+      _user.bindStream(_auth.authStateChanges());
   }
   @override
   void onReady() {
@@ -21,25 +28,58 @@ class AuthViewModel extends GetxController{
     // TODO: implement onClose
     super.onClose();
   }
-void googleSignIn() async{
-    final GoogleSignInAccount googleUser= await _googleSignIn.signIn();
-     GoogleSignInAuthentication googleSignInAuthentication =
-    await googleUser.authentication;
 
-  final AuthCredential credential=   GoogleAuthProvider.credential(
-        idToken: googleSignInAuthentication.idToken,
-        accessToken: googleSignInAuthentication.accessToken);
 
-  UserCredential userCredential=  await _auth.signInWithCredential(credential);
-  print(userCredential.user);
-}
-// void facebookSignIn() async{
-//   FacebookLoginResult result = await _facebookLogin.logIn(['email']);
-//   final accessToken = result.accessToken.token;
-//   if(result.status == FacebookLoginStatus.loggedIn){
-//     final faceCredential = FacebookAuthProvider.credential(accessToken);
-//     await _auth.signInWithCredential(faceCredential);
-//   }
+  // void signup()  async {
+  // UserCredential userCredential = await
+  // FirebaseAuth.instance.createUserWithEmailAndPassword(
+  // email: email,
+  // password: password,
+  // ); Get.offAll(HomeView());
+  // }  FirebaseAuthException  (e) {
+  // if (e.code == 'weak-password') {
+  // print('The password provided is too weak.');
+  // } else if (e.code == 'email-already-in-use') {
+  // print('The account already exists for that email.');
+  // }
+  // }
+  //
+//
+//
+//
+//
+//
+  void sign() async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: "barry.allen@example.com",
+          password: "SuperSecretPassword!"
+      );
+      Get.offAll(HomeView());
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    }
+  }
+  void signUp()async{
+    try{
+      UserCredential userCredential = await  _auth.createUserWithEmailAndPassword(email: email, password: password);
+   Get.offAll(HomeView());
+    print(userCredential);
+    }
+   catch(e){
+      print(e);
+   }
 
-// }
+
+  }
+void anonymousSignin()async{
+  UserCredential userCredential = await _auth.signInAnonymously();
+  Get.offAll(HomeView());
+  print(userCredential);
+  }
+
 }

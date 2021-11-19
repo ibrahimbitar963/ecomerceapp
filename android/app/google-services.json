@@ -1,62 +1,41 @@
 {
   "project_info": {
-    "project_number": "515845568961",
-    "project_id": "my-flash-chat-d1a2a",
-    "storage_bucket": "my-flash-chat-d1a2a.appspot.com"
+    "project_number": "647660596393",
+    "project_id": "e-comme-app",
+    "storage_bucket": "e-comme-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:515845568961:android:18f5282b24b246ce0dd740",
+        "mobilesdk_app_id": "1:647660596393:android:60190a467d45cb8b690db8",
         "android_client_info": {
-          "package_name": "ibrahim.myflashchat.flash_chat"
+          "package_name": "com.example.e_commerce_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "515845568961-ea3e1k0offu57vcj4kefqqkinh17o12h.apps.googleusercontent.com",
+          "client_id": "647660596393-f89r89sk2sfkk9igkk93vnb51g3a3gqt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.e_commerce_app",
+            "certificate_hash": "8ff8b34544cc8a24225c6c5332551f2dd24705cc"
+          }
+        },
+        {
+          "client_id": "647660596393-tv9gierujujn38kbv6sc5ihce4d1c8lj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAKPEUpaBv1I3Gpek-WriMObkxSOEavBpI"
+          "current_key": "AIzaSyArrlIs6Oh5SPOBJpSaMSDJfn_Y9w2baFs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "515845568961-ea3e1k0offu57vcj4kefqqkinh17o12h.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:515845568961:android:62c00465879c7c910dd740",
-        "android_client_info": {
-          "package_name": "me.e_commerce.app"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "515845568961-ea3e1k0offu57vcj4kefqqkinh17o12h.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAKPEUpaBv1I3Gpek-WriMObkxSOEavBpI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "515845568961-ea3e1k0offu57vcj4kefqqkinh17o12h.apps.googleusercontent.com",
+              "client_id": "647660596393-tv9gierujujn38kbv6sc5ihce4d1c8lj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

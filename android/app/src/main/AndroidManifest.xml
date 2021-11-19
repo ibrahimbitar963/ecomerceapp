@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.e_commerce_app">
    <application
-        android:label="e_commerce_app"
+       android:usesCleartextTraffic="true"
+       android:label="e_commerce_app"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
