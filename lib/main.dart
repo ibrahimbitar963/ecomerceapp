@@ -19,9 +19,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialBinding: Binding(),
       home: Scaffold(
-        body: ControlView(
+        body: ControlView(),
 
-        ),
+      ),
+      theme: ThemeData(
+        fontFamily: 'SourceSans'
       ),
     );
   }

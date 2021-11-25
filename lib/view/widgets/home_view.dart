@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/constance.dart';
+import 'package:e_commerce_app/view/details_view.dart';
 import 'package:e_commerce_app/view/view_auth/login_view.dart';
 import 'package:e_commerce_app/view/widgets/custom_text.dart';
 import 'package:e_commerce_app/viewmodel/home_view_model.dart';
@@ -132,58 +133,71 @@ class HomeView extends StatelessWidget {
   }
 
   Widget _listViewProducts() {
-    return Container(
-      height: 300,
-      child: ListView.separated(
-        itemBuilder: (context, index) {
-          return Container(
-            width: MediaQuery.of(context).size.width * .4,
-            child: Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Colors.grey.shade100,
-                  ),
-                  width: MediaQuery.of(context).size.width * .4,
-                  child: Container(
-                    height: 160,
-                    child: Image.asset(
-                      'assets/images/watch.png',
-                      fit: BoxFit.fill,
+    return GetBuilder<HomeViewModel>(
+      builder:(controller)=> Container(
+        height: 300,
+        child: ListView.separated(
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap:(){
+                Get.to(DetailsView(
+                  model: controller.productModel[index],
+                ));
+              } ,
+              child: Container(
+                width: MediaQuery.of(context).size.width * .4,
+                child: Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.grey.shade100,
+                      ),
+                      width: MediaQuery.of(context).size.width * .4,
+                      child: Container(
+                        height: 160,
+                        child: Image.network(
+                          controller.productModel[index].image,
+              fit: BoxFit.fill,
+              ),
+
+                        ),
+                      ),
+
+                    SizedBox(height: 10,),
+                    CustomText(
+                      text: controller.productModel[index].name,
+                      alignment: Alignment.bottomLeft,
                     ),
-                  ),
-                ),
-                SizedBox(height: 10,),
-                CustomText(
-                  text: 'BeoPlay Speaker',
-                  alignment: Alignment.bottomLeft,
-                ),
-               SizedBox(height: 10,),
+                   SizedBox(height: 10,),
 
-                CustomText(
-                  color: Colors.grey,
-                  text: 'Bang and Oulfsen',
-                  alignment: Alignment.bottomLeft,
-                ),
-                SizedBox(height: 10,),
+                    Expanded(
+                      child: CustomText(
+                        color: Colors.grey,
+                        text: controller.productModel[index].description,
+                        alignment: Alignment.bottomLeft,
+                      ),
+                    ),
+                    SizedBox(height: 10,),
 
-                CustomText(
-                  text: '\$725',
-                  color: PrimayColor,
-                  alignment: Alignment.bottomLeft,
+                    CustomText(
+                      text: controller.productModel[index].price.toString() +'\$',
+                      color: PrimayColor,
+                      alignment: Alignment.bottomLeft,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          );
-        },
-        scrollDirection: Axis.horizontal,
-        itemCount: names.length,
-        separatorBuilder: (context, index) {
-          return SizedBox(
-            width: 30,
-          );
-        },
+              ),
+            );
+          },
+          scrollDirection: Axis.horizontal,
+          itemCount: controller.productModel.length,
+          separatorBuilder: (context, index) {
+            return SizedBox(
+              width: 30,
+            );
+          },
+        ),
       ),
     );
   }
