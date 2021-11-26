@@ -14,5 +14,7 @@ class FireStoreUser {
         }
 
 
-
+Future <DocumentSnapshot> getCurrentUser(String uid)async{
+          return await _collectionReference.doc(uid).get();
+}
 }

@@ -41,8 +41,27 @@ class DetailsView extends StatelessWidget {
                         height: 15,
                       ),
                       Row(
-
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
+                         Container(
+                           padding: EdgeInsets.all(16),
+                             width: MediaQuery.of(context).size.width * .4,
+                             decoration: BoxDecoration(
+                                 borderRadius: BorderRadius.circular(20),
+                                 border: Border.all(
+                                   color: Colors.grey,
+                                 )),
+                           child: Row(
+                             mainAxisAlignment: MainAxisAlignment.spaceAround,
+                             children: [
+                               CustomText(
+                                 text: 'size',
+                               ),
+                              CustomText(
+                                  text: model.Sized,),
+                             ],
+                           ),
+                         ),
                           // Container(
                           //   padding: EdgeInsets.all(16),
                           //   width: MediaQuery.of(context).size.width * .4,
@@ -63,50 +82,50 @@ class DetailsView extends StatelessWidget {
                           //     ],
                           //   ),
                           // ),
-                          // Container(
-                          //   padding: EdgeInsets.all(16),
-                          //   width: MediaQuery.of(context).size.width * .44,
-                          //   decoration: BoxDecoration(
-                          //       borderRadius: BorderRadius.circular(20),
-                          //       border: Border.all(
-                          //         color: Colors.grey,
-                          //       )),
-                          //   child: Row(
-                          //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          //     children: [
-                          //       CustomText(
-                          //         text: 'Color',
-                          //       ),
-                          //       Container(
-                          //         width: 30,
-                          //         height: 20,
-                          //         padding: EdgeInsets.all(12),
-                          //         decoration: BoxDecoration(
-                          //           border: Border.all(color: Colors.grey),
-                          //           borderRadius: BorderRadius.circular(20),
-                          //           color: Colors.grey,
-                          //         ),
-                          //       )
-                          //     ],
-                          //   ),
-                          // ),
+                          Container(
+                            padding: EdgeInsets.all(16),
+                            width: MediaQuery.of(context).size.width * .44,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(
+                                  color: Colors.grey,
+                                )),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                CustomText(
+                                  text: 'Color',
+                                ),
+                                Container(
+                                  width: 30,
+                                  height: 20,
+                                  padding: EdgeInsets.all(12),
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.grey),
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.grey,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
                         ],
                       ),
-                      // SizedBox(
-                      //   height: 15,
-                      // ),
-                      // CustomText(
-                      //   text: 'Details',
-                      //   fontsize: 18,
-                      // ),
-                      // SizedBox(
-                      //   height: 20,
-                      // ),
-                      // CustomText(
-                      //   text: model.description,
-                      //   fontsize: 18,
-                      //
-                      // )
+                      SizedBox(
+                        height: 15,
+                      ),
+                      CustomText(
+                        text: 'Details',
+                        fontsize: 18,
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      CustomText(
+                        text: model.description,
+                        fontsize: 18,
+
+                      )
                     ],
                   ),
                 ),

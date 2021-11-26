@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/helper/local_sotrage_data.dart';
 import 'package:e_commerce_app/view/widgets/home_view.dart';
 import 'package:e_commerce_app/viewmodel/auth_view_model.dart';
 import 'package:e_commerce_app/viewmodel/control_view_model.dart';
@@ -11,7 +12,7 @@ class Binding extends Bindings{
     Get.lazyPut(() => (AuthViewModel()));
     Get.lazyPut(() => (ControlViewModel()));
     Get.lazyPut(() => (HomeViewModel()));
-
+    Get.lazyPut(() => (LocalStorageData()));
 
   }
 

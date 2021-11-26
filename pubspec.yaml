@@ -33,6 +33,7 @@ dependencies:
   get: 3.22.1
   firebase: ^9.0.2
   cloud_firestore: 1.0.0
+  shared_preferences: 2.0.0
 
 
 
