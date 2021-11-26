@@ -98,7 +98,7 @@ class AuthViewModel extends GetxController {
 
   void anonymousSignin() async {
     UserCredential userCredential = await _auth.signInAnonymously();
-    Get.offAll(ControlView());
+    Get.offAll(HomeView());
     print(userCredential);
   }
   void saveUser(UserCredential userCredential) async{
