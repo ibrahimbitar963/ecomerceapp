@@ -54,6 +54,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                     color: Colors.grey.shade800,
                   ),
                   Custom_text_form_filed(
+                    password: false,
                     hint: 'myName',
                     onSave: (value) {
                       controller.name = value;
@@ -72,6 +73,7 @@ class RegisterView extends GetWidget<AuthViewModel> {
                     color: Colors.grey.shade800,
                   ),
                   Custom_text_form_filed(
+                    password: false,
                     hint: 'mymail@gmail.com',
                     onSave: (value) {
                       controller.email = value;
@@ -85,11 +87,13 @@ class RegisterView extends GetWidget<AuthViewModel> {
                     height: 30,
                   ),
                   CustomText(
+
                     text: 'Password',
                     fontsize: 15,
                     color: Colors.grey.shade800,
                   ),
                   Custom_text_form_filed(
+                    password: true,
                     validator: (value) {
                       if (value == null) {}
                       print('error');

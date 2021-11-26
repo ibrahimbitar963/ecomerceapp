@@ -68,7 +68,8 @@ class LoginView extends GetWidget<AuthViewModel> {
                     color: Colors.grey.shade800,
                   ),
                   Custom_text_form_filed(
-                    hint: 'mymail@gmail.com',
+                    password: false,
+                    hint: 'Enter Your E-mail',
                     onSave: (value){
                       controller.email=value;
                     },
@@ -86,6 +87,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                     color: Colors.grey.shade800,
                   ),
                   Custom_text_form_filed(
+                    password: true,
                     validator: (value){
                       if(value ==null) {
 
