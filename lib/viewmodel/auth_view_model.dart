@@ -58,8 +58,8 @@ class AuthViewModel extends GetxController {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
-              email: "barry.allen@example.com",
-              password: "SuperSecretPassword!").then((value) async{
+              email: "asd@gmail.com",
+              password: "123456").then((value) async{
                await FireStoreUser().getCurrentUser(value.user.uid)
                    .then((value){
                      setUser(UserModel.fromJson(value.data()));
