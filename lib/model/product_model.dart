@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 class ProductModel {
-  String name, image, description, Sized, price,color;
+  String name, image, description, Sized, price,color,productID;
 
   ProductModel(
       {this.name,
@@ -9,7 +9,8 @@ class ProductModel {
         this.description,
         this.color,
         this.Sized,
-        this.price});
+        this.price,
+        this.productID});
 
   ProductModel.fromJson(Map<dynamic, dynamic> map) {
     if (map == null) {
@@ -22,6 +23,7 @@ class ProductModel {
     color = map['color'];
     Sized = map['Sized'];
     price = map['price'];
+    productID = map['productID'];
   }
 
   toJson() {
@@ -32,6 +34,7 @@ class ProductModel {
       'color': color,
       'Sized': Sized,
       'price': price,
+      'productID':productID
     };
   }
 }

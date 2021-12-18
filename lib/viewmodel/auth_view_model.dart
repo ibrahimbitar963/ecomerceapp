@@ -7,6 +7,7 @@ import 'package:e_commerce_app/view/widgets/home_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthViewModel extends GetxController {
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -16,6 +17,7 @@ class AuthViewModel extends GetxController {
   Rx<User> _user = Rx<User>();
   get user => _user.value?.email;
   final LocalStorageData localStorageData = Get.find();
+  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
 
   @override
   void onInit() {
@@ -114,5 +116,10 @@ class AuthViewModel extends GetxController {
   }
   void setUser(UserModel userModel) async{
    await localStorageData.setUser(userModel);
+  }
+  void SignInGoogle()async{
+  final GoogleSignInAccount googleuser=  await _googleSignIn.signIn();
+  Get.to(ControlView());
+
   }
 }

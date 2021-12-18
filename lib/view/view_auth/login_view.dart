@@ -125,6 +125,7 @@ class LoginView extends GetWidget<AuthViewModel> {
                   SizedBox(height: 30,),
                   custom_social_button(
                     onPressed:(){
+                      controller.SignInGoogle();
                       },
                     text: 'Log in with Google',
                     imageName:'assets/images/google.png' ,

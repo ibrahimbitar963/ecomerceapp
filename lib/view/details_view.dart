@@ -1,8 +1,11 @@
+import 'package:e_commerce_app/model/cart_product_model.dart';
 import 'package:e_commerce_app/model/product_model.dart';
 import 'package:e_commerce_app/view/widgets/custom_button.dart';
 import 'package:e_commerce_app/view/widgets/custom_text.dart';
+import 'package:e_commerce_app/viewmodel/cart_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../constance.dart';
 
@@ -151,13 +154,24 @@ class DetailsView extends StatelessWidget {
                       )
                     ],
                   ),
-                  Container(
-                    padding: EdgeInsets.all(20),
-                    width: 180,
-                    height: 100,
-                    child: CustomButton(
-                      onpressed: () {},
-                      text: 'Add',
+                  GetBuilder<CartViewModel>(
+                    init: Get.find(),
+                    builder: (controller)=>Container(
+                      padding: EdgeInsets.all(20),
+                      width: 180,
+                      height: 100,
+                      child: CustomButton(
+                        onpressed:() => controller.addProduct(
+                            CartProductModel(
+                              name:model.name,
+                              image: model.image,
+                              price: model.price,
+                              quantity: 1,
+                              productID: model.productID
+                            ),
+                        ),
+                        text: 'Add',
+                      ),
                     ),
                   ),
                 ],
